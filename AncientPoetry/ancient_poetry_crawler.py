@@ -29,13 +29,13 @@ URL = 'https://so.gushiwen.cn/mingju/default.aspx?p={}&c=&t='
 def get_html(url):
     """
 
-    Get page
+    Get page html
 
     Args:
         url: URL
 
     Returns:
-        res.text: page content
+        response object
 
     """
     while True:
@@ -57,7 +57,7 @@ def parse_and_save_poetry(html):
         html: html
 
     Returns:
-        images_list: images list
+        None
 
     """
     doc = etree.HTML(html)
@@ -86,17 +86,17 @@ def parse_and_save_poetry(html):
 def save_as_json(poetry_dict):
     """
 
-    Each process
+    Save data as json
 
     Args:
-        None
+        poetry_dict: poetry dict
 
     Returns:
         None
 
     """
     save_path = 'poetry.json'
-    with open(save_path, 'a+', encoding='gb18030') as file:
+    with open(save_path, 'a+') as file:
         file.write(str(poetry_dict) + ",\n")
 
 
@@ -106,7 +106,7 @@ def process(index):
     Each process
 
     Args:
-        None
+        index: page index
 
     Returns:
         None
@@ -128,7 +128,7 @@ def main():
         None
 
     """
-    for index in range(1, 5):
+    for index in range(1, 21):
         process(index)
 
 
