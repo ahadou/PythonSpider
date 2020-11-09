@@ -80,10 +80,10 @@ def parse_html(text):
 
 
 def sent_email(mail_body):
-    sender = '490601115@qq.com'
-    receiver = '3478305753@qq.com'
+    sender = '发送者邮箱地址'
+    receiver = '收信者邮箱地址'
     smtpServer = 'smtp.qq.com'  # 简单邮件传输协议服务器（这里是QQ邮箱的）
-    username = '490601115@qq.com'
+    username = '发送者邮箱地址'
     password = 'smtp授权码'
     mail_title = '【广东工业大学新闻网最新通知】'
     mail_body = mail_body
